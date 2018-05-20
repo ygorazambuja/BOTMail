@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<SplitPane xmlns:fx="http://javafx.com/fxml/1" dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity"
+           minHeight="-Infinity" minWidth="-Infinity" prefHeight="248.0" prefWidth="544.0"
+           xmlns="http://javafx.com/javafx/8.0.171" fx:controller="BotmailController">
+    <items>
+        <Pane prefHeight="398.0" prefWidth="210.0">
+            <children>
+                <JFXTextField fx:id="emailTextField" labelFloat="true" layoutX="17.0" layoutY="127.0"
+                              onKeyReleased="#setCheckBoxEmail" prefHeight="25.0" prefWidth="209.0"
+                              promptText="Seu Email:"/>
+                <JFXPasswordField fx:id="passwordTextField" labelFloat="true" layoutX="17.0" layoutY="177.0"
+                                  onKeyReleased="#setCheckBoxSenha" prefHeight="25.0" prefWidth="209.0"
+                                  promptText="Sua Senha:"/>
+                <JFXCheckBox fx:id="checkBoxEmail" disable="true" ellipsisString="" layoutX="229.0" layoutY="136.0"
+                             mouseTransparent="true" prefHeight="18.0" prefWidth="23.0" visible="false"/>
+                <JFXCheckBox fx:id="checkBoxSenha" cacheShape="false" centerShape="false" disable="true"
+                             ellipsisString="" focusTraversable="false" layoutX="229.0" layoutY="186.0"
+                             mouseTransparent="true" prefHeight="18.0" prefWidth="23.0" scaleShape="false"
+                             visible="false"/>
+                <ImageView fitHeight="110.0" fitWidth="256.0" layoutX="5.0" pickOnBounds="true">
+                    <image>
+                        <Image url="@../icons/tu-logo-min.jpg"/>
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+        <Pane prefHeight="398.0" prefWidth="244.0">
+            <children>
+                <JFXTextField fx:id="destinoTextField" labelFloat="true" layoutX="23.0" layoutY="51.0"
+                              onKeyReleased="#setCheckBoxEmail" prefHeight="25.0" prefWidth="209.0"
+                              promptText="Email do Destinatario:"/>
+                <JFXButton fx:id="btnComeco" buttonType="RAISED" layoutX="54.0" layoutY="171.0" onAction="#comecarBot"
+                           prefHeight="52.0" prefWidth="147.0" ripplerFill="WHITE"
+                           style="-fx-background-color: #4059a9;" text="GO!" visible="false"/>
+                <JFXSlider fx:id="nEmails" layoutX="23.0" layoutY="136.0" prefHeight="14.0" prefWidth="209.0"
+                           value="1.0"/>
+                <Label layoutX="23.0" layoutY="106.0" prefHeight="17.0" prefWidth="116.0" text="Numero de Emails :"/>
+            </children>
+        </Pane>
+    </items>
+</SplitPane>
