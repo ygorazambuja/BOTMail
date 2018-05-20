@@ -2,7 +2,7 @@
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
 
-public class SendEmail {
+class SendEmail {
 
     private String smtp; //Simple Mail Transfer Protocol
     private String email_from;
@@ -14,7 +14,7 @@ public class SendEmail {
     private boolean ssl; // Security Socket Layer
     private boolean tls; // Transport Layer Security
 
-    public SendEmail(String smtp, String email_from, String email_password, String port, boolean ssl, boolean tls) {
+    SendEmail(String smtp, String email_from, String email_password, String port, boolean ssl, boolean tls) {
         this.smtp = smtp;
         this.email_from = email_from;
         this.email_password = email_password;
@@ -23,7 +23,7 @@ public class SendEmail {
         this.tls = tls;
     }
 
-    public void sendSimpleEmail(String email_to, String subject, String msg) {
+    void sendSimpleEmail(String email_to, String subject, String msg) {
         SimpleEmail email = new SimpleEmail();
         try {
             email.setHostName(smtp);

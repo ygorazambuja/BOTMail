@@ -61,7 +61,6 @@ public class BotmailController implements Initializable {
 
     public void comecarBot() {
 
-
         Integer formatado = (int) nEmails.getValue();
         for (int i = 0; i < formatado; i++) {
             SendEmail sendEmail = new SendEmail("smtp.gmail.com", emailTextField.getText(), passwordTextField.getText(), "587", false, true);
@@ -70,7 +69,7 @@ public class BotmailController implements Initializable {
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Pronto!");
-        alert.setContentText("Um total de " + formatado + 1 + " emails foram enviados com sucesso!");
+        alert.setContentText("Um total de " + (formatado + 1) + " emails foram enviados com sucesso!");
         alert.showAndWait();
     }
 

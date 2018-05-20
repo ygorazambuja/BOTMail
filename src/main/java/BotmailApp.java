@@ -14,7 +14,6 @@ public class BotmailApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-
         FXMLLoader loader = new FXMLLoader();
         Parent root = loader.load(getClass().getResource("/fxml/UI.fxml"));
         Scene scene = new Scene(root);
@@ -23,6 +22,5 @@ public class BotmailApp extends Application {
         primaryStage.setTitle("b0tMail");
         primaryStage.setResizable(false);
         primaryStage.show();
-
     }
 }
