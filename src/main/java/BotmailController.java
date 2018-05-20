@@ -61,6 +61,7 @@ public class BotmailController implements Initializable {
 
     public void comecarBot() {
 
+
         Integer formatado = (int) nEmails.getValue();
         for (int i = 0; i < formatado; i++) {
             SendEmail sendEmail = new SendEmail("smtp.gmail.com", emailTextField.getText(), passwordTextField.getText(), "587", false, true);

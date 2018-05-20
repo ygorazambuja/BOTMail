@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import com.jfoenix.controls.*?>
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -31,8 +31,11 @@
                                              scaleShape="false" visible="false"/>
                                 <ImageView fitHeight="110.0" fitWidth="269.0" pickOnBounds="true">
                                     <image>
-                                        <Image url="@../icons/tu-logo-min.jpg"/>
+                                        <Image url="@../icons/b0tmaillogo.png"/>
                                     </image>
+                                    <viewport>
+                                        <Rectangle2D/>
+                                    </viewport>
                                 </ImageView>
                             </children>
                         </Pane>
