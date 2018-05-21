@@ -8,65 +8,49 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <TabPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="BotmailController">
-    <tabs>
-        <Tab closable="false" text="Main">
-            <content>
-                <SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-                           minWidth="-Infinity" prefHeight="248.0" prefWidth="544.0">
-                    <items>
-                        <Pane prefHeight="398.0" prefWidth="210.0" style="-fx-background-color: WHITE;">
-                            <children>
-                                <JFXTextField fx:id="emailTextField" labelFloat="true" layoutX="17.0" layoutY="127.0"
-                                              onKeyReleased="#setCheckBoxEmail" prefHeight="25.0" prefWidth="209.0"
-                                              promptText="Seu Email:"/>
-                                <JFXPasswordField fx:id="passwordTextField" labelFloat="true" layoutX="17.0"
-                                                  layoutY="177.0" onKeyReleased="#setCheckBoxSenha" prefHeight="25.0"
-                                                  prefWidth="209.0" promptText="Sua Senha:"/>
-                                <JFXCheckBox fx:id="checkBoxEmail" disable="true" ellipsisString="" layoutX="229.0"
-                                             layoutY="136.0" mouseTransparent="true" prefHeight="18.0" prefWidth="23.0"
-                                             visible="false"/>
-                                <JFXCheckBox fx:id="checkBoxSenha" cacheShape="false" centerShape="false" disable="true"
-                                             ellipsisString="" focusTraversable="false" layoutX="229.0" layoutY="186.0"
-                                             mouseTransparent="true" prefHeight="18.0" prefWidth="23.0"
-                                             scaleShape="false" visible="false"/>
-                                <ImageView fitHeight="110.0" fitWidth="269.0" pickOnBounds="true">
-                                    <image>
-                                        <Image url="@../icons/b0tmaillogo.png"/>
-                                    </image>
-                                    <viewport>
-                                        <Rectangle2D/>
-                                    </viewport>
-                                </ImageView>
-                            </children>
-                        </Pane>
-                        <Pane prefHeight="398.0" prefWidth="244.0" style="-fx-background-color: WHITE;">
-                            <children>
-                                <JFXTextField fx:id="destinoTextField" labelFloat="true" layoutX="23.0" layoutY="51.0"
-                                              onKeyReleased="#setCheckBoxEmail" prefHeight="25.0" prefWidth="209.0"
-                                              promptText="Email do Destinatario:"/>
-                                <JFXButton fx:id="btnComeco" buttonType="RAISED" layoutX="54.0" layoutY="171.0"
-                                           onAction="#comecarBot" prefHeight="52.0" prefWidth="147.0"
-                                           ripplerFill="WHITE" style="-fx-background-color: #4059a9;" text="GO!"
-                                           visible="false"/>
-                                <JFXSlider fx:id="nEmails" layoutX="23.0" layoutY="136.0" prefHeight="14.0"
-                                           prefWidth="209.0" value="1.0"/>
-                                <Label layoutX="23.0" layoutY="106.0" prefHeight="17.0" prefWidth="116.0"
-                                       text="Numero de Emails :"/>
-                            </children>
-                        </Pane>
-                    </items>
-                </SplitPane>
-            </content>
-        </Tab>
-        <Tab text="Ajuda?">
-            <content>
-                <AnchorPane prefHeight="200.0" prefWidth="200.0"/>
-            </content>
-        </Tab>
-        <Tab text="Colaboradores">
-            <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
-            </content>
-        </Tab>
-    </tabs>
+    <Tab closable="false" text="Main">
+        <SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                   minWidth="-Infinity" prefHeight="248.0" prefWidth="544.0">
+            <Pane prefHeight="398.0" prefWidth="210.0" style="-fx-background-color: WHITE;">
+                <JFXTextField fx:id="emailTextField" labelFloat="true" layoutX="17.0" layoutY="127.0"
+                              onKeyReleased="#setCheckBoxEmail" prefHeight="25.0" prefWidth="209.0"
+                              promptText="Seu Email:"/>
+                <JFXPasswordField fx:id="passwordTextField" labelFloat="true" layoutX="17.0"
+                                  layoutY="177.0" onKeyReleased="#setCheckBoxSenha" prefHeight="25.0"
+                                  prefWidth="209.0" promptText="Sua Senha:"/>
+                <JFXCheckBox fx:id="checkBoxEmail" disable="true" ellipsisString="" layoutX="229.0"
+                             layoutY="136.0" mouseTransparent="true" prefHeight="18.0" prefWidth="23.0"
+                             visible="false"/>
+                <JFXCheckBox fx:id="checkBoxSenha" cacheShape="false" centerShape="false" disable="true"
+                             ellipsisString="" focusTraversable="false" layoutX="229.0" layoutY="186.0"
+                             mouseTransparent="true" prefHeight="18.0" prefWidth="23.0"
+                             scaleShape="false" visible="false"/>
+                <ImageView fitHeight="110.0" fitWidth="269.0" pickOnBounds="true">
+                    <viewport>
+                        <Rectangle2D/>
+                    </viewport>
+                    <Image url="@../icons/b0tmaillogo.png"/>
+                </ImageView>
+            </Pane>
+            <Pane prefHeight="398.0" prefWidth="244.0" style="-fx-background-color: WHITE;">
+                <JFXTextField fx:id="destinoTextField" labelFloat="true" layoutX="23.0" layoutY="51.0"
+                              onKeyReleased="#setCheckBoxEmail" prefHeight="25.0" prefWidth="209.0"
+                              promptText="Email do Destinatario:"/>
+                <JFXButton fx:id="btnComeco" buttonType="RAISED" layoutX="54.0" layoutY="171.0"
+                           onAction="#comecarBot" prefHeight="52.0" prefWidth="147.0"
+                           ripplerFill="WHITE" style="-fx-background-color: #4059a9;" text="GO!"
+                           visible="false"/>
+                <JFXSlider fx:id="nEmails" layoutX="23.0" layoutY="136.0" prefHeight="14.0"
+                           prefWidth="209.0" value="1.0"/>
+                <Label layoutX="23.0" layoutY="106.0" prefHeight="17.0" prefWidth="116.0"
+                       text="Numero de Emails :"/>
+            </Pane>
+        </SplitPane>
+    </Tab>
+    <Tab text="Ajuda?">
+        <AnchorPane prefHeight="200.0" prefWidth="200.0"/>
+    </Tab>
+    <Tab text="Colaboradores">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+    </Tab>
 </TabPane>
