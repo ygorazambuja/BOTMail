@@ -14,7 +14,7 @@
                 <SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
                            minWidth="-Infinity" prefHeight="248.0" prefWidth="544.0">
                     <items>
-                        <Pane prefHeight="398.0" prefWidth="210.0">
+                        <Pane prefHeight="398.0" prefWidth="210.0" style="-fx-background-color: WHITE;">
                             <children>
                                 <JFXTextField fx:id="emailTextField" labelFloat="true" layoutX="17.0" layoutY="127.0"
                                               onKeyReleased="#setCheckBoxEmail" prefHeight="25.0" prefWidth="209.0"
@@ -39,7 +39,7 @@
                                 </ImageView>
                             </children>
                         </Pane>
-                        <Pane prefHeight="398.0" prefWidth="244.0">
+                        <Pane prefHeight="398.0" prefWidth="244.0" style="-fx-background-color: WHITE;">
                             <children>
                                 <JFXTextField fx:id="destinoTextField" labelFloat="true" layoutX="23.0" layoutY="51.0"
                                               onKeyReleased="#setCheckBoxEmail" prefHeight="25.0" prefWidth="209.0"
