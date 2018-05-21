@@ -3,4 +3,4 @@
 Cliente Bot de Email em Java.
 
 ## Atenção
-Desative o Acesso a Aplicativos menos seguros na Conta GOOGLE, sem isso não irá funcionar.
+Ative o Acesso a Aplicativos menos seguros na Conta GOOGLE, sem isso não irá funcionar.
