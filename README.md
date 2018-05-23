@@ -14,3 +14,11 @@ https://support.google.com/accounts/answer/6010255?hl=pt-BR
 - Abra um Terminal, seja em sistemas Unix ou Windows.
 - mvn package
 - O .jar se encontrará na pasta Target.
+
+
+## Ainda faltam ...
+
+-- Espaço para mais destinatários.
+-- Campo de assunto.
+-- Campo de Conteúdo da Mensagem.
+-- Campo de Anexos.
