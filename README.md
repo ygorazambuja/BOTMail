@@ -18,7 +18,4 @@ https://support.google.com/accounts/answer/6010255?hl=pt-BR
 
 ## Ainda faltam ...
 
-- Espaço para mais destinatários.
-- Campo de assunto.
-- Campo de Conteúdo da Mensagem.
 - Campo de Anexos.
