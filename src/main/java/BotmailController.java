@@ -1,7 +1,9 @@
 import com.jfoenix.controls.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -9,7 +11,16 @@ import java.util.ResourceBundle;
 public class BotmailController implements Initializable {
 
     @FXML
-    private JFXTextField emailTextField, destinoTextField;
+    private JFXTextField emailTextField, destinoTextField, assuntoTextField, infoTextField;
+
+    @FXML
+    private JFXTextArea textArea;
+
+    @FXML
+    private JFXProgressBar progressBar;
+
+    @FXML
+    private ImageView btnAnexo;
 
     @FXML
     private JFXPasswordField passwordTextField;
@@ -18,10 +29,41 @@ public class BotmailController implements Initializable {
     private JFXCheckBox checkBoxEmail, checkBoxSenha;
 
     @FXML
-    private JFXButton btnComeco;
+    private JFXButton btnComeco, btnClean, btnAddDestino, btnAjuda;
 
     @FXML
     private JFXSlider nEmails;
+
+    @FXML
+    private JFXListView<String> listView = new JFXListView<>();
+
+    @FXML
+    void btnAnexo(ActionEvent event) {
+
+    }
+
+    @FXML
+    void showAjuda(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setContentText("Olá");
+        alert.showAndWait();
+    }
+
+    @FXML
+    void adicionarDestinatarios(ActionEvent event) {
+
+        listView.getItems().add(destinoTextField.getText());
+        destinoTextField.setText(null);
+
+    }
+
+    @FXML
+    void clean(ActionEvent event) {
+        emailTextField.setText(null);
+        passwordTextField.setText(null);
+        assuntoTextField.setText(null);
+        textArea.setText(null);
+    }
 
     public void setCheckBoxEmail() {
         String s = emailTextField.getText();
@@ -61,21 +103,34 @@ public class BotmailController implements Initializable {
 
     public void comecarBot() {
 
-
         Integer formatado = (int) nEmails.getValue();
-        for (int i = 0; i < formatado; i++) {
-            SendEmail sendEmail = new SendEmail("smtp.gmail.com", emailTextField.getText(), passwordTextField.getText(), "587", false, true);
-            sendEmail.sendSimpleEmail(destinoTextField.getText(), "ISSO NÃO É SPAM ! ISSO NÃO É SPAM ! ", "ISSO NÃO É SPAM");
-        }
 
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Pronto!");
-        alert.setContentText("Um total de " + (formatado + 1) + " emails foram enviados com sucesso!");
-        alert.showAndWait();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                progressBar.setVisible(true);
+
+                for (String s : listView.getItems()) {
+                    SendEmail sendEmail = new SendEmail("smtp.gmail.com", emailTextField.getText(), passwordTextField.getText(), "465", true, true);
+                    sendEmail.sendSimpleEmail(s, assuntoTextField.getText(), textArea.getText());
+                    System.out.println("Email sendo mandado para : " + s);
+                }
+                infoTextField.setDisable(false);
+                infoTextField.setVisible(true);
+                infoTextField.setText("Um total de " + (formatado) + " emails foram enviados com sucesso!");
+                progressBar.setVisible(false);
+            }
+        }).start();
+
+
+
+
     }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
 
     }
 
