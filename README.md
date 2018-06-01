@@ -21,3 +21,6 @@ https://support.google.com/accounts/answer/6010255?hl=pt-BR
 - Correção de Alguns Bugs ...
 
 ![App](app.png)
+
+## Download 
+- Clique [aqui](https://github.com/ygorazambuja/BOTMail/raw/master/b0tMail-1.0-SNAPSHOT-jar-with-dependencies.jar).
