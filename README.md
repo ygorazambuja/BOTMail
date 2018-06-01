@@ -18,6 +18,6 @@ https://support.google.com/accounts/answer/6010255?hl=pt-BR
 
 ## Ainda faltam ...
 
-- Campo de Anexos.
+- Correção de Alguns Bugs ...
 
 ![App](app.png)
